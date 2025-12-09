@@ -1,224 +1,799 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Premium Photography Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Photography - Cinematic Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-  font-family:'Poppins',sans-serif;
-  background:#000;
-  color:#fff;
-  overflow-x:hidden;
-}
+        :root {
+            --gold: #d4af37;
+            --dark: #0a0a0a;
+            --light: #f8f8f8;
+        }
 
-/* COLORS */
-.gold{color:#E2C675}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark);
+            color: #fff;
+            overflow-x: hidden;
+        }
 
-/* NAV */
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    padding:18px 60px;
-    display:flex;
-    justify-content:space-between;
-    background:rgba(0,0,0,0.4);
-    backdrop-filter:blur(7px);
-    z-index:999;
-}
-nav a{margin:0 15px;color:white;text-decoration:none;font-weight:500;}
-nav a:hover{color:#E2C675}
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* HERO PARALLAX */
-.hero{
-  background:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&w=1920') center/cover fixed;
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-.hero h1{
-  font-size:4.5rem;
-  animation:fadeIn 2s;
-}
-.hero p{
-  font-size:1.3rem;
-  letter-spacing:2px;
-  animation:fadeUp 2.2s;
-}
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-/* Section Title */
-.title{
-  text-align:center;
-  font-size:2.6rem;
-  margin:80px 0 40px;
-  color:#E2C675;
-}
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: var(--gold);
+            z-index: 1001;
+        }
 
-/* ABOUT Glass section */
-.about{
-  width:70%;
-  margin:auto;
-  background:rgba(255,255,255,0.05);
-  padding:40px;
-  border-radius:15px;
-  backdrop-filter:blur(8px);
-  box-shadow:0 0 25px rgba(255,255,255,.1);
-  line-height:30px;
-  text-align:center;
-  font-size:1.1rem;
-}
+        .logo img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
 
-/* PACKAGES */
-.packages{
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  flex-wrap:wrap;
-  padding:50px 20px;
-}
-.card{
- background:#101010;
- border-radius:15px;
- padding:30px;
- width:300px;
- border:1px solid #333;
- transition:.5s;
-}
-.card:hover{
- transform:translateY(-10px);
- box-shadow:0 0 20px rgba(226,198,117,.4);
-}
-.card h3{color:#E2C675;}
-.card button{
-  background:#E2C675;
-  padding:10px 25px;
-  border:none;
-  cursor:pointer;
-  margin-top:20px;
-  font-weight:600;
-}
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
 
-/* PARALLAX SLIDER */
-.banner{
-  height:60vh;
-  background:url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&w=1920') center/cover fixed;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:2rem;
-}
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
 
-/* GALLERY GRID */
-.gallery{
-  width:90%;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  grid-gap:20px;
-}
-.gallery img{
-  width:100%;
-  height:280px;
-  object-fit:cover;
-  border-radius:10px;
-  transition:.4s;
-}
-.gallery img:hover{
-  transform:scale(1.08);
-  filter:brightness(70%);
-}
+        .nav-links a:hover {
+            color: var(--gold);
+        }
 
-/* FOOTER */
-footer{
-  background:#111;
-  padding:60px;
-  text-align:center;
-  margin-top:80px;
-}
-</style>
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--gold);
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5em;
+            font-weight: 300;
+            letter-spacing: 10px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .cta-btn {
+            padding: 18px 50px;
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 2px;
+            display: inline-block;
+            transition: all 0.4s;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .cta-btn:hover {
+            background: var(--gold);
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px 60px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-subtitle {
+            font-size: 0.9em;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            font-weight: 300;
+            letter-spacing: 4px;
+        }
+
+        /* Packages Section */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .package-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            transition: transform 0.5s, box-shadow 0.5s;
+        }
+
+        .package-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
+        }
+
+        .package-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: all 0.6s;
+        }
+
+        .package-card:hover .package-img {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        .package-content {
+            padding: 40px;
+        }
+
+        .package-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+
+        .package-price {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .package-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .package-features li:before {
+            content: "✓";
+            color: var(--gold);
+            margin-right: 10px;
+        }
+
+        .book-btn {
+            width: 100%;
+            padding: 15px;
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.4s;
+        }
+
+        .book-btn:hover {
+            background: var(--gold);
+            color: #000;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: all 0.6s;
+        }
+
+        .gallery-item:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.15);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay span {
+            color: var(--gold);
+            font-size: 1.5em;
+            letter-spacing: 2px;
+        }
+
+        /* Reels Section */
+        .reels-section {
+            background: #000;
+        }
+
+        .reels-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .reel-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .reel-card {
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.5s;
+        }
+
+        .reel-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .reel-video {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .reel-info {
+            padding: 30px;
+        }
+
+        .reel-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+
+        .reel-desc {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                        url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1920&h=800&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-bottom: 50px;
+        }
+
+        .contact-item {
+            display: inline-block;
+            margin: 20px 40px;
+            font-size: 1.1em;
+        }
+
+        .contact-item a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 30px;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 70%;
+                max-width: 300px;
+                background: rgba(10, 10, 10, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: right 0.4s ease;
+                backdrop-filter: blur(20px);
+                border-left: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.2em;
+                letter-spacing: 2px;
+            }
+
+            section {
+                padding: 60px 30px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+                letter-spacing: 5px;
+            }
+
+            .hero p {
+                font-size: 1em;
+                letter-spacing: 2px;
+            }
+
+            .section-title {
+                font-size: 2.5em;
+            }
+
+            .packages-grid,
+            .gallery-grid,
+            .reel-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .reel-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .reel-video {
+                height: 400px;
+            }
+
+            .contact-item {
+                display: block;
+                margin: 15px 0;
+            }
+        }
+
+        /* Tablet */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .logo img {
+                height: 55px;
+            }
+
+            .hero h1 {
+                font-size: 4em;
+            }
+
+            .packages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .reel-showcase {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="video/logo.png" alt="Elite Photography">
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reels">Reels</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<nav>
- <div class="logo gold">Luxury Photography</div>
- <div>
-  <a href="#about">About</a>
-  <a href="#packages">Packages</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#footer">Contact</a>
- </div>
-</nav>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="https://storage.coverr.co/videos/JXPxXzMqgLZW3FPKKw3N4jq014RB6QYjge/preview" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>DHYANAM PHOTOGRAPHY</h1>
+            <p>CAPTURING TIMELESS MOMENTS</p>
+            <a href="#packages" class="cta-btn">EXPLORE</a>
+        </div>
+    </section>
 
-<div class="hero">
- <div>
-   <h1>Cinematic Photography</h1>
-   <p>Wedding • Engagement • Pre-Wedding • Fashion</p>
- </div>
-</div>
+    <!-- Packages Section -->
+    <section id="packages">
+        <div class="section-header">
+            <div class="section-subtitle">OUR SERVICES</div>
+            <h2 class="section-title">Photography Packages</h2>
+        </div>
+        <div class="packages-grid">
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop" alt="Wedding" class="package-img">
+                <div class="package-content">
+                    <h3 class="package-name">Wedding</h3>
+                    <div class="package-price">₹1,31,000</div>
+                    <ul class="package-features">
+                        <li>Full day coverage (12 hours)</li>
+                        <li>2 professional photographers</li>
+                        <li>500+ edited images</li>
+                        <li>Premium photo album</li>
+                        <li>Online gallery</li>
+                    </ul>
+                    <button class="book-btn">BOOK NOW</button>
+                </div>
+            </div>
 
-<h2 id="about" class="title">About Me</h2>
-<div class="about">
-Professional photographer with cinematic style, expert in wedding, fashion & pre-wedding shoots. Capturing elegant emotions with creativity.
-</div>
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&h=600&fit=crop" alt="Engagement" class="package-img">
+                <div class="package-content">
+                    <h3 class="package-name">Engagement</h3>
+                    <div class="package-price">₹15,000</div>
+                    <ul class="package-features">
+                        <li>2 hour session</li>
+                        <li>1 skilled photographer</li>
+                        <li>100+ edited photos</li>
+                        <li>Location of choice</li>
+                        <li>Online gallery</li>
+                    </ul>
+                    <button class="book-btn">BOOK NOW</button>
+                </div>
+            </div>
 
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=800&h=600&fit=crop" alt="Pre-Wedding" class="package-img">
+                <div class="package-content">
+                    <h3 class="package-name">Pre-Wedding</h3>
+                    <div class="package-price">₹20,000</div>
+                    <ul class="package-features">
+                        <li>4 hour session</li>
+                        <li>2 photographers</li>
+                        <li>200+ edited images</li>
+                        <li>3 locations included</li>
+                        <li>Cinematic video reel</li>
+                    </ul>
+                    <button class="book-btn">BOOK NOW</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h2 id="packages" class="title">Premium Packages</h2>
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="section-header">
+            <div class="section-subtitle">OUR WORK</div>
+            <h2 class="section-title">Photo Gallery</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&h=600&fit=crop" alt="Photo 1">
+                <div class="gallery-overlay">
+                    <span>Wedding</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=600&h=600&fit=crop" alt="Photo 2">
+                <div class="gallery-overlay">
+                    <span>Engagement</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=600&h=600&fit=crop" alt="Photo 3">
+                <div class="gallery-overlay">
+                    <span>Portrait</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&h=600&fit=crop" alt="Photo 4">
+                <div class="gallery-overlay">
+                    <span>Pre-Wedding</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=600&fit=crop" alt="Photo 5">
+                <div class="gallery-overlay">
+                    <span>Maternity</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1543965170-4c01a586684e?w=600&h=600&fit=crop" alt="Photo 6">
+                <div class="gallery-overlay">
+                    <span>Event</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="packages">
+    <!-- Reels Section -->
+    <section class="reels-section" id="reels">
+        <div class="section-header">
+            <div class="section-subtitle">CINEMATIC</div>
+            <h2 class="section-title">Video Reels</h2>
+        </div>
+        <div class="reels-container">
+            <div class="reel-showcase">
+                <div class="reel-card">
+                    <video class="reel-video" controls muted poster="video/reel1.webp">
+                        <source src="video/reel1.mp4" type="video/mp4">
+                    </video>
+                    <div class="reel-info">
+                        <h3 class="reel-title">Wedding Highlights</h3>
+                        <p class="reel-desc">A beautiful celebration of love captured in stunning cinematic quality. Every moment tells a story.</p>
+                    </div>
+                </div>
 
-<div class="card">
- <h3>Wedding</h3>
- <p>Full cinematic coverage</p>
- <p>₹ 60,000 - 2,00,000</p>
- <button>View</button>
-</div>
+                <div class="reel-card">
+                    <video class="reel-video" controls muted poster="video/reel2.webp">
+                        <source src="video/reel2.mp4" type="video/mp4">
+                    </video>
+                    <div class="reel-info">
+                        <h3 class="reel-title">Pre-Wedding Story</h3>
+                        <p class="reel-desc">An enchanting journey of two souls before their big day. Romance meets artistry.</p>
+                    </div>
+                </div>
 
-<div class="card">
- <h3>Luxury Pre-Wedding</h3>
- <p>Outdoor cinematic shoot</p>
- <p>₹ 30,000 - 1,50,000</p>
- <button>View</button>
-</div>
+                <div class="reel-card">
+                    <video class="reel-video" controls muted poster="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&h=600&fit=crop">
+                        <source src="https://storage.coverr.co/videos/gxVz01VKxLhQqGFrQeCEVw7S7J9pJ7Az/preview" type="video/mp4">
+                    </video>
+                    <div class="reel-info">
+                        <h3 class="reel-title">Engagement Reel</h3>
+                        <p class="reel-desc">Pure joy and excitement captured in motion. The beginning of forever.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
- <h3>Engagement</h3>
- <p>Indoor / outdoor</p>
- <p>₹ 15,000 - 60,000</p>
- <button>View</button>
-</div>
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="section-header">
+            <div class="section-subtitle">GET IN TOUCH</div>
+            <h2 class="section-title">Let's Create Magic</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    📧 <a href="mailto:princepatel22283@gmail.com">princepatel22283@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    📱 <a href="tel:+919825305037">+91 98253 05037</a>
+                </div>
+                <div class="contact-item">
+                    📍 Surat, Gujarat, India
+                </div>
+            </div>
+            <a href="mailto:princepatel22283@gmail.com" class="cta-btn">SEND INQUIRY</a>
+        </div>
+    </section>
 
-</div>
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Dhyanam Photography Studio. All Rights Reserved.</p>
+    </footer>
 
-<div class="banner gold">
-  Make every moment cinematic ✨
-</div>
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
 
-<h2 id="gallery" class="title">Gallery</h2>
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
 
-<div class="gallery">
- <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7">
- <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
- <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
- <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
- <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2">
- <img src="https://images.unsplash.com/photo-1512427691650-1f37b89a6c5f">
-</div>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
+        // Book button alert
+        document.querySelectorAll('.book-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('📸 Thank you for your interest!\n\n✉️ Contact us:\n📧 princepatel22283@gmail.com\n📱 +91 98253 05037');
+            });
+        });
 
-<footer id="footer">
- <h2 class="gold">Contact</h2>
- <p>📞 +91 98765 43210</p>
- <p>📩 yourmail@gmail.com</p>
- <p>📸 Instagram: @yourid</p>
-</footer>
-
+        // Auto-play videos on hover and pause others
+        const allVideos = document.querySelectorAll('.reel-video');
+        
+        allVideos.forEach(video => {
+            video.addEventListener('mouseenter', function() {
+                // Pause all other videos and reset them
+                allVideos.forEach(v => {
+                    if (v !== this) {
+                        v.pause();
+                        v.currentTime = 0;
+                        v.load(); // Show poster again
+                    }
+                });
+                // Play current video
+                this.play();
+            });
+            
+            video.addEventListener('mouseleave', function() {
+                this.pause();
+                this.currentTime = 0; // Reset video to start
+                this.load(); // Reload to show poster again
+            });
+        });
+    </script>
 </body>
 </html>
