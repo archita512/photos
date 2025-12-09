@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Photography Studio - Premium Wedding & Portrait Photography</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">ÉLITE</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#gallery">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-subtitle">Premium Photography Services</div>
+            <h1 class="hero-title">Capturing Life's<br>Timeless Moments</h1>
+            <p class="hero-description">Award-winning photography for weddings, engagements, and special occasions</p>
+            <a href="#packages" class="cta-btn">Explore Packages</a>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+            <p style="color: var(--gold); font-size: 0.8em; letter-spacing: 2px;">SCROLL</p>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages">
+        <div class="section-header">
+            <div class="section-subtitle">Our Services</div>
+            <h2 class="section-title">Photography Packages</h2>
+        </div>
+        
+        <div class="packages-container">
+            <div class="packages-grid">
+                <!-- Wedding Package -->
+                <div class="package-card">
+                    <div class="package-image-wrapper">
+                        <div class="package-badge">Most Popular</div>
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=800&fit=crop" alt="Wedding Photography" class="package-image">
+                        <div class="package-overlay"></div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-header-info">
+                            <h3 class="package-name">Wedding</h3>
+                            <div class="package-price">$2,499</div>
+                        </div>
+                        <ul class="package-features">
+                            <li>Full day coverage with 12 hours of shooting</li>
+                            <li>2 expert photographers and 1 assistant</li>
+                            <li>500+ professionally edited high-resolution images</li>
+                            <li>Private online gallery with unlimited downloads</li>
+                            <li>Premium 50-page custom photo album</li>
+                            <li>Complimentary engagement session included</li>
+                            <li>Ceremony, reception, and candid moments</li>
+                            <li>Family portraits and group photography</li>
+                            <li>USB drive with all edited images</li>
+                            <li>Print release for personal use</li>
+                        </ul>
+                        <button class="book-button" onclick="bookPackage('Wedding', '$2,499')">Reserve Your Date</button>
+                    </div>
+                </div>
+
+                <!-- Engagement Package -->
+                <div class="package-card">
+                    <div class="package-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1200&h=800&fit=crop" alt="Engagement Photography" class="package-image">
+                        <div class="package-overlay"></div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-header-info">
+                            <h3 class="package-name">Engagement</h3>
+                            <div class="package-price">$599</div>
+                        </div>
+                        <ul class="package-features">
+                            <li>2 hour professional photo session</li>
+                            <li>1 skilled photographer dedicated to you</li>
+                            <li>Location of your choice (city, park, beach)</li>
+                            <li>100+ beautifully edited high-resolution photos</li>
+                            <li>Secure online gallery with download access</li>
+                            <li>Custom save-the-date card design</li>
+                            <li>Multiple outfit changes encouraged</li>
+                            <li>Perfect for social media and announcements</li>
+                            <li>Props and styling consultation</li>
+                            <li>48-hour sneak peek delivery</li>
+                        </ul>
+                        <button class="book-button" onclick="bookPackage('Engagement', '$599')">Book Session</button>
+                    </div>
+                </div>
+
+                <!-- Pre-Wedding Package -->
+                <div class="package-card">
+                    <div class="package-image-wrapper">
+                        <div class="package-badge">Cinematic</div>
+                        <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=1200&h=800&fit=crop" alt="Pre-Wedding Photography" class="package-image">
+                        <div class="package-overlay"></div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-header-info">
+                            <h3 class="package-name">Pre-Wedding</h3>
+                            <div class="package-price">$899</div>
+                        </div>
+                        <ul class="package-features">
+                            <li>4 hour extensive photo session</li>
+                            <li>2 professional photographers for diverse angles</li>
+                            <li>Multiple scenic locations (up to 3)</li>
+                            <li>200+ artistically edited high-resolution images</li>
+                            <li>Premium online gallery with sharing options</li>
+                            <li>3-minute cinematic video highlight reel</li>
+                            <li>Unlimited outfit and styling changes</li>
+                            <li>Professional props and setup assistance</li>
+                            <li>Drone photography (weather permitting)</li>
+                            <li>24-hour preview images for social media</li>
+                        </ul>
+                        <button class="book-button" onclick="bookPackage('Pre-Wedding', '$899')">Start Planning</button>
+                    </div>
+                </div>
+
+                <!-- Portrait Package -->
+                <div class="package-card">
+                    <div class="package-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1200&h=800&fit=crop" alt="Portrait Photography" class="package-image">
+                        <div class="package-overlay"></div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-header-info">
+                            <h3 class="package-name">Portrait</h3>
+                            <div class="package-price">$399</div>
+                        </div>
+                        <ul class="package-features">
+                            <li>1 hour focused portrait session</li>
+                            <li>1 professional photographer</li>
+                            <li>Indoor studio or outdoor location</li>
+                            <li>50+ expertly retouched high-resolution photos</li>
+                            <li>Digital online gallery with easy sharing</li>
+                            <li>Individual, couple, or small group portraits</li>
+                            <li>Professional lighting and posing guidance</li>
+                            <li>Advanced editing and skin retouching</li>
+                            <li>Perfect for headshots and social profiles</li>
+                            <li>Same-week turnaround available</li>
+                        </ul>
+                        <button class="book-button" onclick="bookPackage('Portrait', '$399')">Schedule Now</button>
+                    </div>
+                </div>
+
+                <!-- Maternity Package -->
+                <div class="package-card">
+                    <div class="package-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=1200&h=800&fit=crop" alt="Maternity Photography" class="package-image">
+                        <div class="package-overlay"></div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-header-info">
+                            <h3 class="package-name">Maternity</h3>
+                            <div class="package-price">$499</div>
+                        </div>
+                        <ul class="package-features">
+                            <li>2 hour maternity celebration session</li>
+                            <li>1 experienced photographer specializing in maternity</li>
+                            <li>Professional studio or natural outdoor setting</li>
+                            <li>80+ beautifully edited high-resolution images</li>
+                            <li>Private online gallery for family sharing</li>
+                            <li>Partner and sibling photos included</li>
+                            <li>Maternity gown wardrobe provided</li>
+                            <li>Belly casting consultation available</li>
+                            <li>Comfortable posing for expecting mothers</li>
+                            <li>Perfect timing guidance (28-34 weeks)</li>
+                        </ul>
+                        <button class="book-button" onclick="bookPackage('Maternity', '$499')">Book Session</button>
+                    </div>
+                </div>
+
+                <!-- Event Package -->
+                <div class="package-card">
+                    <div class="package-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&h=800&fit=crop" alt="Event Photography" class="package-image">
+                        <div class="package-overlay"></div>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-header-info">
+                            <h3 class="package-name">Event</h3>
+                            <div class="package-price">$799</div>
+                        </div>
+                        <ul class="package-features">
+                            <li>Up to 6 hours of event coverage</li>
+                            <li>1-2 professional photographers based on scale</li>
+                            <li>Birthdays, anniversaries, corporate functions</li>
+                            <li>300+ professionally edited high-resolution photos</li>
+                            <li>Branded online gallery with download access</li>
+                            <li>Candid moments and posed group shots</li>
+                            <li>Express 7-day delivery turnaround</li>
+                            <li>Venue photography and detail shots</li>
+                            <li>Guest photography and interactions</li>
+                            <li>Social media optimized images</li>
+                        </ul>
+                        <button class="book-button" onclick="bookPackage('Event', '$799')">Book Event</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="section-header">
+            <div class="section-subtitle">Our Portfolio</div>
+            <h2 class="section-title">Recent Work</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&h=800&fit=crop" alt="Portfolio 1">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-text">Wedding</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800&h=800&fit=crop" alt="Portfolio 2">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-text">Engagement</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=800&h=800&fit=crop" alt="Portfolio 3">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-text">Portrait</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&h=800&fit=crop" alt="Portfolio 4">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-text">Pre-Wedding</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&h=800&fit=crop" alt="Portfolio 5">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-text">Maternity</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1543965170-4c01a586684e?w=800&h=800&fit=crop" alt="Portfolio 6">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-text">Event</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=800&h=800&fit=crop" alt="Portfolio 7">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-text">Ceremony</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1535743686920-55e4145369b9?w=800&h=800&fit=crop" alt="Portfolio 8">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-item-text">Candid</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="section-header">
+            <div class="section-subtitle">Client Reviews</div>
+            <h2 class="section-title">What Our Clients Say</h2>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <p class="testimonial-text">"Absolutely stunning work! They captured every emotion of our wedding day perfectly. The photos are beyond our expectations and we'll treasure them forever."</p>
+                <p class="testimonial-author">— Sarah & Michael Thompson</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="section-header">
+            <div class="section-subtitle">Get In Touch</div>
+            <h2 class="section-title">Let's Create Together</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Details</h3>
+                <ul class="contact-details">
+                    <li>📧 <a href="mailto:hello@elitephoto.com">hello@elitephoto.com</a></li>
+                    <li>📱 <a href="tel:+919876543210">+91 98765 43210</a></li>
+                    <li>📍 Surat, Gujarat, India</li>
+                    <li>🕒 Mon - Sat: 10:00 AM - 7:00 PM</li>
+                </ul>
+            </div>
+            <div class="contact-form">
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tell us about your event..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Élite Photography Studio. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
